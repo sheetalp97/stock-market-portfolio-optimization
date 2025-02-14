@@ -76,6 +76,7 @@ This project performs stock market analysis using R, connecting to a PostgreSQL 
     *   Performs tabular and graphical return data analytics.
     *   Performs MV (Mean-Variance) Portfolio Optimization.
     *   Charts hypothetical Portfolio Returns.
+    *   The tickers used in the portfolio analysis (`ENS`, `PCTY`, `FCNCA`, `CBFV`, `MPW`, `ORAN`, `FWONK`, `LHCG`, `POR`, `AGM`, `MIELY`, `BURL`, `SMTOY`, `ESLOY`, `MLVF`) were specifically assigned to our group for this project.
 *   Review the code comments in the `Stock_Market_Portfolio_Optimization.R` script for detailed explanations.
 
 ## Contributing
