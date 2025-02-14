@@ -8,7 +8,7 @@ This project performs stock market analysis using R, connecting to a PostgreSQL 
 
 *   Data is primarily sourced from a PostgreSQL database named `stockmarket_GP`, as defined in `Stock_Market_Portfolio_Optimization.sql`.
 *   Key tables include `custom_calendar` and `eod_quotes`, as well as data loaded from external CSV files.
-*   External data files used for initial database setup include: `daily_returns_2016_2021.csv`, `daily_prices_2016_2021.csv`, `eod.csv`, `companylist_amex.csv`, `companylist_nasdaq.csv`, `companylist_nyse.csv`, `custom_calendar.csv`, and `SP500TR.csv`.
+*   The initial data files (CSV and XLSX) used to populate the database are available at: [https://drive.google.com/drive/folders/1--f8vTi0ZKTJs3Oc9Z0YP6NDURfOwjH7?usp=sharing]. These include: `daily_returns_2016_2021.csv`, `daily_prices_2016_2021.csv`, `eod.csv`, `companylist_amex.csv`, `companylist_nasdaq.csv`, `companylist_nyse.csv`, `custom_calendar.csv`, and `SP500TR.csv`.
 
 ## Files
 
@@ -35,15 +35,19 @@ This project performs stock market analysis using R, connecting to a PostgreSQL 
     git clone https://github.com/sheetalp97/stock-market-portfolio-optimization
     cd stock-market-portfolio-optimization
     ```
+    
+2.  **Download Data Files:**
 
-2.  **Set up the PostgreSQL database:**
+    *   Download all CSV and XLSX data files from [https://drive.google.com/drive/folders/1--f8vTi0ZKTJs3Oc9Z0YP6NDURfOwjH7?usp=sharing].
+    
+3.  **Set up the PostgreSQL database:**
 
     *   Create a database named `stockmarket_GP` on `localhost`.
     *   Run the `Stock_Market_Portfolio_Optimization.sql` script to create the necessary tables and load initial company listing data.
     *   Import `eod.csv`, `custom_calendar.csv`, and `SP500TR.csv` data into the appropriate tables (e.g., `eod_quotes`, `custom_calendar`) within the `stockmarket_GP` database.
     *   Ensure the database user `stockmarketreadergp` has the password `read123` and the appropriate permissions, as defined in the R script.
 
-3.  **Install R packages:**
+4.  **Install R packages:**
 
     *   Install the required R packages by running the following code in R:
 
@@ -51,11 +55,11 @@ This project performs stock market analysis using R, connecting to a PostgreSQL 
     install.packages(c("RPostgres", "DBI", "reshape2", "zoo", "PerformanceAnalytics", "PortfolioAnalytics", "ROI", "ROI.plugin.quadprog", "xts"))
     ```
 
-4.  **Configure the R script:**
+5.  **Configure the R script:**
 
     *   Modify the `Stock_Market_Portfolio_Optimization.R` script to ensure the database connection parameters (user, password, host, port, dbname) match your PostgreSQL setup.  The script uses `stockmarketreadergp`, `read123`, `localhost`, `5432`, and `stockmarket_GP` by default.
 
-5.  **Run the R script:**
+6.  **Run the R script:**
 
     *   Execute the `Stock_Market_Portfolio_Optimization.R` script to perform the stock market analysis.
 
